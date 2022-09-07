@@ -1,2 +1,2 @@
 Hello world!!
-Test merge request
+Test merge from branch to master
