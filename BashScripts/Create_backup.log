@@ -1,0 +1,55 @@
+########################################
+---
+Start 2022-09-10 13:40:28
+archFileName 20220910-134028.tar.gz
+Source Create_backup.sh found.
+Distination /Users/guranchik found.
+---
+Backup
+a Create_backup.sh
+---
+Delete files > 5
+---
+Stop 2022-09-10 13:40:28
+########################################
+---
+Start 2022-09-10 13:40:34
+archFileName 20220910-134034.tar.gz
+Source Create_backup.sh found.
+Distination /Users/guranchik found.
+---
+Backup
+a Create_backup.sh
+---
+Delete files > 5
+---
+Stop 2022-09-10 13:40:34
+########################################
+---
+Start 2022-09-10 13:40:38
+archFileName 20220910-134038.tar.gz
+Source Create_backup.sh found.
+Distination /Users/guranchik found.
+---
+Backup
+a Create_backup.sh
+---
+Delete files > 5
+OlderFile 20220910-133808.tar.gz.
+---
+Stop 2022-09-10 13:40:38
+########################################
+---
+Start 2022-09-10 13:40:47
+archFileName 20220910-134047.tar.gz
+Source Create_backup.sh found.
+Distination /Users/guranchik found.
+---
+Backup
+a Create_backup.sh
+---
+Delete files > 4
+OlderFile 20220910-133822.tar.gz.
+OlderFile 20220910-133906.tar.gz.
+---
+Stop 2022-09-10 13:40:47
