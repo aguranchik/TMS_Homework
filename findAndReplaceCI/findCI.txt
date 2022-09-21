@@ -1,0 +1,13 @@
+Принцип - разбить на строки, чтобы в каждой строке была только одна фраза continuous integration и подсчитать строки
+
+grep -oi "continuous integration" - выводит строки содержащие только continuous integration без учета регистра.
+Подсчет разными методами
+curl https://www.atlassian.com/continuous-delivery/continuous-integration | grep -oi "continuous integration" | wc -l
+curl https://www.atlassian.com/continuous-delivery/continuous-integration | grep -oi "continuous integration" | grep -ci "continuous integration"
+curl https://www.atlassian.com/continuous-delivery/continuous-integration | grep -oi "continuous integration" | awk 'END { print NR }'
+
+Выводим curl без строк прогресса (-s), удаляем пустые строки, удаляем первую строку (которая осталась без continuous integration после добавления переноса строки)
+Подсчет теми же методами
+curl -s  https://www.atlassian.com/continuous-delivery/continuous-integration | sed 's/[C,c]ontinuous [I,i]ntegration/\ncontinuous integration/g' | sed '/^$/d'| sed -e "1d" | wc -l
+curl -s  https://www.atlassian.com/continuous-delivery/continuous-integration | sed 's/[C,c]ontinuous [I,i]ntegration/\ncontinuous integration/g' | sed '/^$/d'| sed -e "1d" | grep -ci "continuous integration"
+curl -s  https://www.atlassian.com/continuous-delivery/continuous-integration | sed 's/[C,c]ontinuous [I,i]ntegration/\ncontinuous integration/g' | sed '/^$/d'| sed -e "1d" | awk 'END { print NR }' 

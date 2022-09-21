@@ -1,0 +1,5 @@
+Замена
+curl -s  https://www.atlassian.com/continuous-delivery/continuous-integration | sed 's/[C,c]ontinuous [I,i]ntegration/CI/g'
+
+Подсчитать можно по тому же принципу, что и в первой части задания
+curl -s  https://www.atlassian.com/continuous-delivery/continuous-integration | sed 's/[C,c]ontinuous [I,i]ntegration/\nCI/g' | sed '/^$/d'| sed -e "1d" | wc -l
