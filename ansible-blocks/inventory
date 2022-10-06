@@ -1,0 +1,5 @@
+[test]
+vm-multi1 ansible_host=192.168.8.22
+vm-multi2 ansible_host=192.168.8.21
+vm-multi3 ansible_host=192.168.8.27
+
