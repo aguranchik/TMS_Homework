@@ -1,0 +1,43 @@
+nodes = {
+   "vm-multi1" => ["generic/ubuntu2004", 2, 2028],
+   "vm-multi2" => ["generic/centos8", 2, 2048],
+   "vm-multi3" => ["generic/debian11", 2, 2048]
+}
+
+Vagrant.configure(2) do |config|
+  nodes.each do | (name, cfg) |
+    box, numvcpus, memory = cfg
+
+    config.vm.define name do |machine|
+      machine.vm.box      = box
+      machine.vm.hostname = name
+      machine.vm.synced_folder('.', '/vagrant', type: 'rsync')
+
+      machine.vm.provider :vmware_esxi do |esxi|
+        esxi.esxi_hostname         = '192.168.8.200'
+        esxi.esxi_username         = 'root'
+        esxi.esxi_password         = 'env:esxi_password'
+        esxi.esxi_virtual_network  = "VM Network"
+        esxi.esxi_disk_store       = "nvme-1"
+        esxi.guest_numvcpus        = numvcpus
+        esxi.guest_memsize         = memory
+        esxi.local_allow_overwrite = 'True'
+      end
+      machine.vm.provision "ubuntu", type: "shell", inline: <<-SHELL
+        sudo su
+        USER='ansible'
+        useradd -m "$USER"
+        mkdir -p /home/"$USER"/.ssh
+        cat /vagrant/id_rsa.pub >> /home/"$USER"/.ssh/authorized_keys
+        chown "$USER":"$USER" /home/"$USER" -R
+        chmod 600 /home/"$USER"/.ssh/authorized_keys
+        chmod 700 /home/"$USER"/.ssh
+        echo "$USER ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+        ip a | grep -oe "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\/24"
+      SHELL
+    end
+  end
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "PlaybookApache2.yml"
+  end    
+end

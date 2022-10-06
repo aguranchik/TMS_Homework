@@ -1,0 +1,42 @@
+---
+- name: Install Apache Web Server
+  hosts: all
+  become: yes
+
+  vars:
+    source: ./html/index.html
+    destination: /var/www/html/index.html
+
+  tasks:
+  - name: Install Apache2
+    apt: name=apache2 update_cache=yes state=latest
+    when: ansible_os_family == "Debian"
+
+  - name: Install httpd
+    yum: name=httpd state=latest
+    when: ansible_os_family == "RedHat"
+
+  - name: Copy html to server
+    copy: src={{ source }} dest={{ destination }} mode=0555
+    notify: Restart Apache
+    when: ansible_os_family == "Debian"
+
+  - name: Copy html to server
+    copy: src={{ source }} dest={{ destination }} mode=0555
+    notify: Restart httpd
+    when: ansible_os_family == "RedHat"
+
+  - name: Start & Enable Apache2
+    service: name=apache2 state=started enabled=yes
+    when: ansible_os_family == "Debian"
+
+  - name: Start & Enable httpd
+    service: name=httpd state=started enabled=yes
+    when: ansible_os_family == "RedHat"
+
+  handlers:
+  - name: Restart Apache
+    service: name=apache2 state=restarted
+
+  - name: Restart httpd
+    service: name=httpd state=restarted
