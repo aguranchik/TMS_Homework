@@ -1,0 +1,3 @@
+---
+# vars file for install_apache
+destination: /var/www/html

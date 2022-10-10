@@ -1,0 +1,43 @@
+---
+# tasks file for install_apache
+
+- block: #Debian
+
+  - name: Install Apache2
+    apt: name=apache2 update_cache=yes state=latest
+
+  - name: Start & Enable Apache2
+    service: name=apache2 state=started enabled=yes
+
+  when: ansible_os_family == "Debian"
+
+- block: #RedHat
+
+  - name: Install httpd
+    yum: name=httpd state=latest
+
+  - name: Firewalld rules
+    ansible.posix.firewalld:
+      service: "http"
+      state: enabled
+      permanent: true
+      immediate: true
+
+  - name: Start & Enable httpd
+    service: name=httpd state=started enabled=yes
+
+  when: ansible_os_family == "RedHat"
+
+- name: Template html to server
+  template: src=index.j2 dest={{ destination }}/index.html mode=0555
+  notify: 
+    - Restart Apache
+    - Restart httpd
+
+- name: Copy files to server
+  copy: src={{ item }} dest={{ destination }} mode=0555
+  loop:
+    - "Razrabotka.webp"
+  notify: 
+    - Restart Apache
+    - Restart httpd
