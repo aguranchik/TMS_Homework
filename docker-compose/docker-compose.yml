@@ -1,0 +1,30 @@
+version: "3"
+services:
+  apache2:
+    image: debian-apache2:0.1
+    ports:
+      - 8080:80
+    volumes:
+      - "./html:/var/www/html"
+    networks:
+      - TMS_net
+
+
+
+  httpd:
+    image: fedora-httpd:0.1
+    ports:
+      - 8081:80
+    volumes:
+      - "./html:/var/www/html"
+    networks:
+      - TMS_net
+  
+networks:
+  TMS_net:
+    driver: overlay
+    attachable: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.0.1/24
