@@ -1,0 +1,5 @@
+docker build -t debian-apache2:0.1 .
+docker build -t fedora-httpd:0.1 .
+
+docker run --name fedora-httpd -d -p 8081:80 fedora-httpd:0.1
+docker run --name debian-apache2 -d -p 8080:80 debian-apache2:0.1
