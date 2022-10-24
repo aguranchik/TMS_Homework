@@ -2,3 +2,4 @@
 cURL/cookies.txt
 test/
 */.vagrant/
+docker-web/*/logs/
