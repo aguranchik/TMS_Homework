@@ -1,0 +1,72 @@
+[Thu Oct 20 22:45:45.723448 2022] [mpm_event:notice] [pid 15:tid 281473869901840] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Thu Oct 20 22:45:45.727351 2022] [core:notice] [pid 15:tid 281473869901840] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Thu Oct 20 23:20:18.736698 2022] [mpm_event:notice] [pid 15:tid 281473511436304] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Thu Oct 20 23:20:18.738257 2022] [core:notice] [pid 15:tid 281473511436304] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Thu Oct 20 23:24:19.125012 2022] [mpm_event:notice] [pid 15:tid 281473511436304] AH00491: caught SIGTERM, shutting down
+[Thu Oct 20 23:24:31.442361 2022] [mpm_event:notice] [pid 8:tid 281473807704080] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Thu Oct 20 23:24:31.461717 2022] [core:notice] [pid 8:tid 281473807704080] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Thu Oct 20 23:53:39.498791 2022] [mpm_event:notice] [pid 15:tid 281473104162832] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Thu Oct 20 23:53:39.500568 2022] [core:notice] [pid 15:tid 281473104162832] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Thu Oct 20 23:54:52.664953 2022] [mpm_event:notice] [pid 15:tid 281473104162832] AH00493: SIGUSR1 received.  Doing graceful restart
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Thu Oct 20 23:54:52.677592 2022] [mpm_event:notice] [pid 15:tid 281473104162832] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Thu Oct 20 23:54:52.678614 2022] [core:notice] [pid 15:tid 281473104162832] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Fri Oct 21 00:42:57.023101 2022] [mpm_event:notice] [pid 37:tid 281472964984848] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Fri Oct 21 00:42:57.024331 2022] [core:notice] [pid 37:tid 281472964984848] AH00094: Command line: '/usr/sbin/apache2'
+[Fri Oct 21 00:43:26.384506 2022] [mpm_event:notice] [pid 38:tid 281472835850256] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Fri Oct 21 00:43:26.386736 2022] [core:notice] [pid 38:tid 281472835850256] AH00094: Command line: '/usr/sbin/apache2'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 24 00:31:32.770874 2022] [mpm_event:notice] [pid 15:tid 281472932773904] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Mon Oct 24 00:31:32.776919 2022] [core:notice] [pid 15:tid 281472932773904] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 24 00:37:11.436317 2022] [mpm_event:notice] [pid 15:tid 281473016184848] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Mon Oct 24 00:37:11.441871 2022] [core:notice] [pid 15:tid 281473016184848] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 24 14:58:42.956468 2022] [mpm_event:notice] [pid 15:tid 281473108111376] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Mon Oct 24 14:58:42.958120 2022] [core:notice] [pid 15:tid 281473108111376] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 24 17:27:49.609714 2022] [mpm_event:notice] [pid 14:tid 281472965496848] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Mon Oct 24 17:27:49.611448 2022] [core:notice] [pid 14:tid 281472965496848] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 24 17:43:29.961934 2022] [mpm_event:notice] [pid 15:tid 281473329590288] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Mon Oct 24 17:43:29.964870 2022] [core:notice] [pid 15:tid 281473329590288] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 24 17:53:53.383546 2022] [mpm_event:notice] [pid 15:tid 281472876032016] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Mon Oct 24 17:53:53.386168 2022] [core:notice] [pid 15:tid 281472876032016] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 25 19:26:01.450670 2022] [mpm_event:notice] [pid 15:tid 281472950521872] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Tue Oct 25 19:26:01.453604 2022] [core:notice] [pid 15:tid 281472950521872] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 25 19:28:53.008381 2022] [mpm_event:notice] [pid 15:tid 281473389371408] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Tue Oct 25 19:28:53.009921 2022] [core:notice] [pid 15:tid 281473389371408] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 25 21:42:32.571384 2022] [mpm_event:notice] [pid 14:tid 281473611501584] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Tue Oct 25 21:42:32.572400 2022] [core:notice] [pid 14:tid 281473611501584] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 25 23:31:03.248672 2022] [mpm_event:notice] [pid 15:tid 281473892388880] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Tue Oct 25 23:31:03.249860 2022] [core:notice] [pid 15:tid 281473892388880] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 25 23:41:06.753172 2022] [mpm_event:notice] [pid 15:tid 281473371664400] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Tue Oct 25 23:41:06.754707 2022] [core:notice] [pid 15:tid 281473371664400] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.2. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 25 23:48:31.126004 2022] [mpm_event:notice] [pid 15:tid 281473307344912] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Tue Oct 25 23:48:31.126864 2022] [core:notice] [pid 15:tid 281473307344912] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 25 23:51:16.499494 2022] [mpm_event:notice] [pid 15:tid 281473008037904] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Tue Oct 25 23:51:16.501699 2022] [core:notice] [pid 15:tid 281473008037904] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 25 23:56:45.556813 2022] [mpm_event:notice] [pid 15:tid 281473136492560] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Tue Oct 25 23:56:45.559632 2022] [core:notice] [pid 15:tid 281473136492560] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 25 23:59:19.628789 2022] [mpm_event:notice] [pid 15:tid 281473184452624] AH00489: Apache/2.4.54 (Debian) configured -- resuming normal operations
+[Tue Oct 25 23:59:19.630723 2022] [core:notice] [pid 15:tid 281473184452624] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Oct 26 00:35:11.663736 2022] [mpm_event:notice] [pid 15:tid 281473130360848] AH00489: Apache/2.4.54 (Debian) OpenSSL/1.1.1n configured -- resuming normal operations
+[Wed Oct 26 00:35:11.664678 2022] [core:notice] [pid 15:tid 281473130360848] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.0.3. Set the 'ServerName' directive globally to suppress this message
+[Wed Oct 26 00:37:14.328127 2022] [mpm_event:notice] [pid 15:tid 281473038282768] AH00489: Apache/2.4.54 (Debian) OpenSSL/1.1.1n configured -- resuming normal operations
+[Wed Oct 26 00:37:14.329294 2022] [core:notice] [pid 15:tid 281473038282768] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.1.2. Set the 'ServerName' directive globally to suppress this message
+[Wed Oct 26 01:24:31.082130 2022] [mpm_event:notice] [pid 15:tid 281473556385808] AH00489: Apache/2.4.54 (Debian) OpenSSL/1.1.1n configured -- resuming normal operations
+[Wed Oct 26 01:24:31.083239 2022] [core:notice] [pid 15:tid 281473556385808] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
