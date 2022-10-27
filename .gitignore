@@ -3,3 +3,5 @@ cURL/cookies.txt
 test/
 */.vagrant/
 docker-web/*/logs/
+docker-images-2/
+docker-ssl/*/ssl/
