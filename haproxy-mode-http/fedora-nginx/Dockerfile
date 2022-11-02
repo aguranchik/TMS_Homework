@@ -1,4 +1,4 @@
-FROM fedora-nginx:0.2
+FROM guranchik/fedora-nginx:0.2
 RUN mkdir -p /opt/nginx/tms.guranchik.com/ \
     && mkdir -p /opt/nginx/logs/\
     && mkdir -p /etc/nginx/ssl/
