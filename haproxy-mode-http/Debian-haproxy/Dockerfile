@@ -1,4 +1,4 @@
-FROM debian:0.1
+FROM guranchik/debian:0.1
 RUN mkdir -p /etc/haproxy/ && \
     mkdir -p /run/haproxy/
 RUN apt -y update && apt -y install \
