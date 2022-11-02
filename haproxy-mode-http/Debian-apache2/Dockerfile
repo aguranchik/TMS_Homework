@@ -1,4 +1,4 @@
-FROM debian-apache2:0.2
+FROM guranchik/debian-apache2:0.2
 RUN mkdir -p /opt/apache2/tms.guranchik.com/ \
     && mkdir -p /opt/apache2/logs/ \
     && mkdir -p /etc/apache2/ssl/
