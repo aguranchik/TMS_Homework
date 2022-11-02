@@ -2,9 +2,9 @@ version: "3"
 services:
   apache2:
     build: ./Debian-apache2
-    ports:
-      - 8081:80
-      - 4431:443
+#    ports:
+#      - 8081:80
+#      - 4431:443
     volumes:
       - ./Debian-apache2/html:/opt/apache2/tms.guranchik.com
       - ./Debian-apache2/logs:/opt/apache2/logs
@@ -13,9 +13,9 @@ services:
 
   nginx:
     build: ./fedora-nginx
-    ports:
-      - 8082:80
-      - 4432:443
+#    ports:
+#      - 8082:80
+#      - 4432:443
     volumes:
       - ./fedora-nginx/html:/opt/nginx/tms.guranchik.com
       - ./fedora-nginx/logs:/opt/nginx/logs
