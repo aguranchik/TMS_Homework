@@ -1,0 +1,30 @@
+version: "3"
+services:
+  mysql:
+    restart: always
+    build: ./mysql
+    container_name: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    networks:
+      - TMS_net
+
+  postgres:
+    restart: always
+    build: ./postgres
+    container_name: postgres
+    ports:
+      - 5432:5432
+    networks:
+      - TMS_net
+
+networks:   
+  TMS_net:
+    driver: bridge
+    attachable: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.1.1/24
