@@ -5,5 +5,4 @@ test/
 docker-images-2/
 */*/ssl/
 */*/logs/
-db/mysql/data
-db/postgres/data
+db/*/data

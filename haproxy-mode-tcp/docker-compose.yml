@@ -1,0 +1,49 @@
+version: "3"
+services:
+  apache2:
+    build: ./Debian-apache2
+    # ports:
+    #   - 8081:80
+    #   - 4431:443
+    volumes:
+      - ./Debian-apache2/html:/opt/apache2/tms.guranchik.com
+      - ./Debian-apache2/logs:/opt/apache2/logs
+    networks:
+      - TMS_net
+
+  nginx:
+    build: ./fedora-nginx
+    # ports:
+    #   - 8082:80
+    #   - 4432:443
+    volumes:
+      - ./fedora-nginx/html:/opt/nginx/tms.guranchik.com
+      - ./fedora-nginx/logs:/opt/nginx/logs
+    links:
+      - apache2
+    networks:
+      - TMS_net
+
+  haproxy:
+    container_name: haproxy
+    build: ./Debian-haproxy
+    # volumes:
+    #   - ./Debian-haproxy/logs:/dev/log
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    links:
+      - nginx
+      - apache2
+    networks:
+      - TMS_net
+
+networks:
+  TMS_net:
+    driver: bridge
+    attachable: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.1.1/24
