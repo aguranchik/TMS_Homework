@@ -1,0 +1,11 @@
+{
+    "total": 6,
+    "result": [
+        "{\"host\": \"prod-mysql-node-01\", \"uname\": \"root\", \"password\": \"password\"}",
+        "{\"host\": \"prod-mysql-node-01\", \"uname\": \"dbreader\", \"password\": \"password\"}",
+        "{\"host\": \"prod-mysql-node-01\", \"uname\": \"dbwriter\", \"password\": \"password\"}",
+        "{\"host\": \"prod-mysql-node-02\", \"uname\": \"root\", \"password\": \"password\"}",
+        "{\"host\": \"prod-mysql-node-02\", \"uname\": \"dbreader\", \"password\": \"password\"}",
+        "{\"host\": \"prod-mysql-node-02\", \"uname\": \"dbwriter\", \"password\": \"password\"}"
+    ]
+}
