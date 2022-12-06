@@ -1,0 +1,13 @@
+Started by upstream project "docker_ci" build number 50
+originally caused by:
+ Started by user aguranchik
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/docker_cd
+[docker_cd] $ /bin/sh -xe /tmp/jenkins4875786032930528504.sh
++ docker stop apache2
+Error response from daemon: No such container: apache2
+Build step 'Execute shell' changed build result to UNSTABLE
+[docker_cd] $ /bin/sh -xe /tmp/jenkins6081016371063118326.sh
++ docker run --name apache2 -d -p80:80 --rm debian-apache2:0.1
+1025938a2dc45be4343ecb2ba472d80c9366caabc81e3924a42a10b223c026ab
+Finished: UNSTABLE
