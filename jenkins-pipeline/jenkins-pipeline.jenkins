@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    
+    environment{
+        ENV_U_NAME = "${params.U_NAME}"
+        ENV_IMG_NAME = "${params.IMG_NAME}"
+        ENV_TAG_NUM = "${params.TAG_NUM}"
+        ENV_CONT_NAME = "${params.CONT_NAME}"
+    }
+    
+    stages {
+        stage('CI') {
+            steps {
+                checkout([
+                    $class: 'GitSCM', branches: [[name:"main"]],
+                    userRemoteConfigs:[
+                        [credentialsId: 'github-ssh-key', url: "git@github.com:aguranchik/home-servers.git"]
+                        ]
+                    ])
+                script{
+                    sh "docker build -t ${ENV_IMG_NAME}:${ENV_TAG_NUM} --build-arg UNAME=${ENV_U_NAME} --build-arg NBUILD=${BUILD_ID} docker/."
+                }
+            }
+        }
+        stage('CD') {
+            steps {
+                sh "docker run --name ${ENV_CONT_NAME} -d -p80:80 --rm ${ENV_IMG_NAME}:${ENV_TAG_NUM}"
+            }
+        }
+    }
+}
