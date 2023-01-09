@@ -1,0 +1,13 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1671734299741",
+    "Statement": [
+        {
+            "Sid": "Stmt1671734296514",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::guranchik/photo_2022-12-22_20-48-00.jpg"
+        }
+    ]
+}
