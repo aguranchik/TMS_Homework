@@ -1,0 +1,45 @@
+########################################
+---
+Start 2023-01-14 17:29:20
+archFileName 20230114-172920.tar.gz
+Source /Users/guranchik/TMS/TMS_Homework/AWS-backup-to-s3 found.
+Distination /Users/guranchik found.
+---
+Backup
+tar: Removing leading '/' from member names
+a Users/guranchik/TMS/TMS_Homework/AWS-backup-to-s3
+a Users/guranchik/TMS/TMS_Homework/AWS-backup-to-s3/backup.sh
+a Users/guranchik/TMS/TMS_Homework/AWS-backup-to-s3/Create_backup.log
+---
+Copy backup to s3
+Completed 5.5 KiB/5.5 KiB (6.3 KiB/s) with 1 file(s) remainingupload: ../../../backup/20230114-172920.tar.gz to s3://guranchik/backup/20230114-172920.tar.gz
+---
+Delete files > 3
+OlderFile 20230114-171354.tar.gz.
+---\Sync backup with s3
+delete: s3://guranchik/backup/20230114-171354.tar.gz
+---
+Stop 2023-01-14 17:29:24
+########################################
+---
+Start 2023-01-14 17:29:54
+archFileName 20230114-172954.tar.gz
+Source /Users/guranchik/TMS/TMS_Homework/AWS-backup-to-s3 found.
+Distination /Users/guranchik found.
+---
+Backup
+tar: Removing leading '/' from member names
+a Users/guranchik/TMS/TMS_Homework/AWS-backup-to-s3
+a Users/guranchik/TMS/TMS_Homework/AWS-backup-to-s3/backup.sh
+a Users/guranchik/TMS/TMS_Homework/AWS-backup-to-s3/Create_backup.log
+---
+Copy backup to s3
+Completed 6.5 KiB/6.5 KiB (6.7 KiB/s) with 1 file(s) remainingupload: ../../../backup/20230114-172954.tar.gz to s3://guranchik/backup/20230114-172954.tar.gz
+---
+Delete files > 3
+OlderFile 20230114-172703.tar.gz.
+---
+Sync backup with s3
+delete: s3://guranchik/backup/20230114-172703.tar.gz
+---
+Stop 2023-01-14 17:29:57
