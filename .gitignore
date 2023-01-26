@@ -7,3 +7,7 @@ docker-images-2/
 */*/logs/
 db/*/data
 sql/data
+*/.terraform
+*/.terraform.tfstate.lock.info
+*/terraform.tfstate.backup
+*/terraform.tfstate
