@@ -8,5 +8,5 @@ resource "aws_nat_gateway" "nat_gw" {
   allocation_id = aws_eip.nat_gw_eip[count.index].id
   subnet_id     = aws_subnet.public_subnets[count.index].id
   depends_on    = [aws_internet_gateway.gw]
-  tags          = merge(var.common_tags, { Name = "nat_gw-${count.index + 1}" })
+  tags          = merge(var.common_tags, { Name = "nat_gw-${var.common_tags.Environment}-${count.index + 1}" })
 }

@@ -16,7 +16,7 @@ resource "aws_security_group" "bastion_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = merge(var.common_tags, { Name = "bastion_sg" })
+  tags = merge(var.common_tags, { Name = "bastion_sg-${var.common_tags.Environment}" })
 }
 
 resource "aws_security_group" "front_sg" {
@@ -54,7 +54,7 @@ resource "aws_security_group" "front_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = merge(var.common_tags, { Name = "front_sg" })
+  tags = merge(var.common_tags, { Name = "front_sg-${var.common_tags.Environment}" })
 }
 
 resource "aws_security_group" "app_sg" {
@@ -85,7 +85,7 @@ resource "aws_security_group" "app_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = merge(var.common_tags, { Name = "app_sg ${count.index + 1}" })
+  tags = merge(var.common_tags, { Name = "app_sg-${var.common_tags.Environment}-${count.index + 1}" })
 }
 
 resource "aws_security_group" "db_sg" {
@@ -116,5 +116,5 @@ resource "aws_security_group" "db_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = merge(var.common_tags, { Name = "db_sg ${count.index + 1}" })
+  tags = merge(var.common_tags, { Name = "db_sg-${var.common_tags.Environment}-${count.index + 1}" })
 }

@@ -10,7 +10,7 @@ variable "cidr_block" {
 
 variable "az_required_number" {
   type    = number
-  default = 3
+  default = 2
 
 }
 

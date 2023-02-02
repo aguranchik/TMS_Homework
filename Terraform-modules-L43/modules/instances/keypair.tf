@@ -4,6 +4,6 @@ resource "tls_private_key" "example" {
 }
 
 resource "aws_key_pair" "generated_key" {
-  key_name   = var.project_key
+  key_name   = join("",[var.project_key,"-${var.common_tags.Environment}"])
   public_key = tls_private_key.example.public_key_openssh
 }

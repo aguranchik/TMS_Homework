@@ -12,7 +12,7 @@ resource "aws_route_table" "public_rt" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.gw.id
   }
-  tags = merge(var.common_tags, { Name = "public_rt" })
+  tags = merge(var.common_tags, { Name = "public_rt-${var.common_tags.Environment}" })
 }
 
 #Routing tables for private subnet
@@ -23,7 +23,7 @@ resource "aws_route_table" "private_rt" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_nat_gateway.nat_gw[count.index].id
   }
-  tags = merge(var.common_tags, { Name = "private_rt-${count.index + 1}" })
+  tags = merge(var.common_tags, { Name = "private_rt-${var.common_tags.Environment}-${count.index + 1}" })
 }
 
 #Associate  public subnet to public route table

@@ -18,7 +18,7 @@ resource "aws_subnet" "public_subnets" {
   cidr_block        = local.subnet_cidr_bloks.public[count.index]
   availability_zone = element(data.aws_availability_zones.available.names, count.index)
   depends_on        = [aws_vpc.main]
-  tags              = merge(var.common_tags, { Name = "Public Subnet ${count.index + 1}" })
+  tags              = merge(var.common_tags, { Name = "public_subnet-${var.common_tags.Environment}-${count.index + 1}" })
 }
 
 resource "aws_subnet" "private_subnets" {
@@ -27,5 +27,5 @@ resource "aws_subnet" "private_subnets" {
   cidr_block        = local.subnet_cidr_bloks.private[count.index]
   availability_zone = element(data.aws_availability_zones.available.names, count.index)
   depends_on        = [aws_vpc.main]
-  tags              = merge(var.common_tags, { Name = "Private Subnet ${count.index + 1}" })
+  tags              = merge(var.common_tags, { Name = "private_subnet-${var.common_tags.Environment}-${count.index + 1}" })
 }

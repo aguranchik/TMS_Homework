@@ -1,21 +1,11 @@
-variable "region_prod" {
+variable "region" {
   type    = string
   default = "us-east-1"
-}
-
-variable "region_dev" {
-  type    = string
-  default = "us-east-1"
-}
-
-variable "cidr_block" {
-  type    = string
-  default = "10.0.0.0/16"
 }
 
 variable "az_required_number" {
   type    = number
-  default = 2
+  default = 3
 
 }
 
@@ -32,6 +22,11 @@ variable "project_key" {
 variable "key" {
   type    = string
   default = "guranchik-key-pair"
+}
+
+variable "cidr_block" {
+  type    = string
+  default = "0.0.0.0/0"
 }
 
 variable "common_tags" {
