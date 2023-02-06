@@ -1,0 +1,116 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  httpd
+  labels:
+    app:  httpd
+spec:
+  selector:
+    matchLabels:
+      app: httpd
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  httpd
+    spec:
+      containers:
+      - name:  httpd
+        image:  httpd:latest
+        ports:
+        - containerPort:  80
+          name:  httpd
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpd
+spec:
+  selector:
+    app: httpd
+  ports:
+  - name: httpd
+    protocol: TCP
+    port: 8081
+    targetPort: 80
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  nginx
+  labels:
+    app:  nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  nginx
+    spec:
+      containers:
+      - name:  nginx
+        image:  nginx:latest
+        ports:
+        - containerPort:  80
+          name:  nginx
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx
+  ports:
+  - name: nginx
+    protocol: TCP
+    port: 8080
+    targetPort: 80
+
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /nginx(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx
+            port:
+              number: 8080
+      - path: /httpd(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: httpd
+            port:
+              number: 8081
+---
