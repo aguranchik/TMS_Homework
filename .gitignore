@@ -12,3 +12,4 @@ sql/data
 */terraform.tfstate.backup
 */terraform.tfstate
 .vscode/settings.json
+.vscode/
