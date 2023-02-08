@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  nginx
+  namespace: default
+  labels:
+    app:  nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  nginx
+    spec:
+      containers:
+      - name:  nginx
+        image:  nginx:latest
+        ports:
+        - containerPort:  80
+          name:  nginx
+        volumeMounts:
+        - name: nginx-pv
+          mountPath: /usr/share/nginx/html
+      volumes:
+        - name: nginx-pv
+          persistentVolumeClaim:
+            claimName: mypvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mypvc
+  namespace: default
+  labels:
+    app: mypvc
+spec:
+  storageClassName: standart
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80

@@ -11,3 +11,4 @@ sql/data
 */.terraform.tfstate.lock.info
 */terraform.tfstate.backup
 */terraform.tfstate
+.vscode/settings.json
